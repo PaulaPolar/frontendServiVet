@@ -43,6 +43,7 @@ const Curi = () => {
       <div class="mt-16 py-4 px-4 bg-whit w-72 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
         <div class="w-sm">
           <img class="w-64" src={anguila} alt="" />
+          
           <div class="mt-4 text-green-600 text-center">
             <h1 class="text-xl font-bold">Alta tensión.</h1>
             <p class="mt-4 text-gray-600">La anguila eléctrica, Electroptiorus electricus, puede emitir una descarga de 600 voltios durante unos milisegundos.</p>
