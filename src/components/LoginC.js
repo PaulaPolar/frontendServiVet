@@ -1,10 +1,27 @@
-import React from "react";
+import { useState, useContext, Navigate } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
+import UserContext from "../context/UserContext.js";
 
 const LoginC = () => {
+
+  const { iniciarSesion } = useContext(UserContext);
+
+  const [correo, setCorreo] = useState("");
+  const [clave, setClave] = useState("");
+  const [logged, setLogged] = useState(false);
+
+  if (logged) {
     return (
-        <div className="font-sans">
+      <div>
+        <Navigate to="/home" />
+      </div>);
+
+  } else {
+
+    return (
+
+      <div className="font-sans">
         <div className="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 ">
           <div className="relative sm:max-w-sm w-full">
             <div className="card bg-blue-400 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-6" />
@@ -15,10 +32,10 @@ const LoginC = () => {
               </label>
               <form method="#" action="#" className="mt-10">
                 <div>
-                  <input type="email" placeholder="Correo electronico" className="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" />
+                  <input type="email" placeholder="Correo electronico" onChange={(e) => { setCorreo(e.target.value); console.log("Correo: " + correo) }} className="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" />
                 </div>
-                <div className="mt-7">                
-                  <input type="password" placeholder="Contraseña" className="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" />                           
+                <div className="mt-7">
+                  <input type="password" placeholder="Contraseña" onChange={(e) => { setClave(e.target.value); console.log("Clave: " + clave) }} className="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" />
                 </div>
                 <div className="mt-7 flex">
                   <label htmlFor="remember_me" className="inline-flex items-center w-full cursor-pointer">
@@ -27,16 +44,24 @@ const LoginC = () => {
                       Recuerdame
                     </span>
                   </label>
-                  <div className="w-full text-right">     
+                  <div className="w-full text-right">
                     <a className="underline text-sm text-gray-600 hover:text-gray-900" href="#">
                       ¿Olvidó su contraseña?
-                    </a>                                  
+                    </a>
                   </div>
                 </div>
                 <div className="mt-7">
-                  <button className="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+
+                  <button onClick={async () => {
+
+                    // await iniciarSesion(correo, clave) ? setLogged(true) : setLogged(false)
+                    let response = await iniciarSesion(correo, clave)
+                    response != null ? setLogged(true) : alert("Credenciales incorrectas!");
+
+                  }} className="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
                     Login
                   </button>
+
                 </div>
                 <div className="flex mt-7 items-center text-center">
                   <hr className="border-gray-300 border-1 w-full rounded-md" />
@@ -56,14 +81,14 @@ const LoginC = () => {
                 <div className="mt-7">
                   <div className="flex justify-center items-center">
                     <label className="mr-2">¿Eres nuevo?</label>
-                    
+
                     <Link className=" text-blue-500 transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105"
-                          href="/#"
-                          to="/registro"
+                      href="/#"
+                      to="/registro"
                     >
                       Crea una cuenta
                     </Link>
-                
+
                   </div>
                 </div>
               </form>
@@ -73,6 +98,7 @@ const LoginC = () => {
       </div>
 
     );
-  };
-  
-  export default LoginC;
+  }
+};
+
+export default LoginC;
