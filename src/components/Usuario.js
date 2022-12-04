@@ -1,7 +1,6 @@
 import React, { Fragment, useState, useEffect, useContext } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Link, useHistory } from "react-router-dom";
-import ModificarUsuario from "./ModificarUsuario";
 import UserContext from "../context/UserContext";
 
 const Usuario = ({ usuario }) => {
@@ -72,7 +71,7 @@ const Usuario = ({ usuario }) => {
             </Dialog.Title>
             <div className="mt-2">
               <p className="text-sm text-gray-500">
-                ¿Estas seguro que quieres eliminar al usuario? {usuario._id}
+                ¿Estas seguro que quieres eliminar al usuario? {usuario.name}
               </p>
             </div>
 
@@ -85,7 +84,7 @@ const Usuario = ({ usuario }) => {
                Cancelar
               </button>
               <button type="button"  className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-green-300 hover:bg-blue-100 text-xl text-gray-900 font-bold  rounded-xl transition duration-200" 
-               onClick={() =>{DeleteUsuario(usuario._id); closeModal()}}>
+               onClick={() =>{DeleteUsuario(usuario.id); closeModal()}}>
           
               Aceptar
               </button>

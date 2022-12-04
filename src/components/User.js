@@ -1,5 +1,4 @@
 import React, { Fragment, useState, useEffect, useContext } from "react";
-import { getUsuarios } from "../datos/apiCore";
 
 import Usuario from "../components/Usuario";
 import { Link } from "react-router-dom";

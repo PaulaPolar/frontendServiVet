@@ -1,5 +1,4 @@
 import { useState, useContext, Navigate } from "react";
-import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import UserContext from "../context/UserContext.js";
 
@@ -10,6 +9,7 @@ const LoginC = () => {
   const [correo, setCorreo] = useState("");
   const [clave, setClave] = useState("");
   const [logged, setLogged] = useState(false);
+  const navigate = useNavigate();
 
   if (logged) {
     return (

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Fragment } from "react";
-import { getServicios } from "../datos/apiCore";
 import "../App.css";
 import Servicio from "../components/Servicio";
 
@@ -9,14 +8,36 @@ const Services = ({}) => {
   const [error, setError] = useState(false);
 
   const loadServicios = () => {
-    getServicios().then((data) => {
-      if (data.error) {
-        setError(data.error);
-      } else {
-        setServicios(data);
-        console.log(data);
-      }
-    });
+    setServicios([
+      {
+        nombre: "producto 1",
+        descripcion: "descripcion 1",
+        imagen: 'cardiologia.jpg'
+      },
+      {
+        nombre: "producto 1",
+        descripcion: "descripcion 1",
+        imagen: "cardiologia.jpg"
+      },
+      {
+        nombre: "producto 1",
+        descripcion: "descripcion 1",
+        imagen: "cardiologia.jpg"
+      },
+      {
+        nombre: "producto 1",
+        descripcion: "precio 1",
+        imagen: "cardiologia.jpg"
+      },
+    ]);
+    // getServicios().then((data) => {
+    //   if (data.error) {
+    //     setError(data.error);
+    //   } else {
+    //     setServicios(data);
+    //     console.log(data);
+    //   }
+    // });
   };
 
   useEffect(() => {

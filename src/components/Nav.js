@@ -60,7 +60,7 @@ const Nav = () => {
             </a>
           </div>
           <div>
-            <Titulo>Veterinaria lupita</Titulo>
+            <Titulo>ServiVet</Titulo>
           </div>
         </div>
 
@@ -296,7 +296,7 @@ const Nav = () => {
                   href="/#"
                   to="/NFT"
                 >
-                  ¿Dudas?
+                  Calendario
                 </Link>
               </li>
               <li className="mb-1">

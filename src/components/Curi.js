@@ -3,7 +3,7 @@ import mono from "../img/mono.jpg";
 import mosca from "../img/mosca.jpg";
 import lombris from "../img/mono.jpg";
 import salamandra from "../img/salamandra.jpg";
-import  tiburon from "../img/tiburon.jpg";
+import tiburon from "../img/tiburon.jpg";
 import anguila from "../img/anguila.jpg";
 import bacteria from "../img/bacteria.jpg";
 import ballena from "../img/ballena.jpg";
