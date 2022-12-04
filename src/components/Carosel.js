@@ -3,13 +3,8 @@ import { Slideshow, Slide, TextoSlide } from "./SlideShow";
 import "../styles/estilos.css";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import img1 from "../img/animal1.jpg";
 import img2 from "../img/animal2.png";
-import img3 from "../img/animal3.jpg";
-import img4 from "../img/animal2.png";
-import datos from "../datos/imagenes";
-import imagenes from "../datos/imagenes";
-import { ReactComponent as  Gato } from "../img/iconmonstr-cat-7.svg";
+
 const Carosel = () => {
   return (
     <main>

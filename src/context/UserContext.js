@@ -25,9 +25,8 @@ const UserProvider = ({ children }) => {
         console.log(celular);
         console.log(direccion);
 
-
         return await axios({
-            url: `http://localhost:9301/sesion`,
+            url: API,
             method: 'post',
             data: {
                 query: `
@@ -47,7 +46,7 @@ const UserProvider = ({ children }) => {
             }
         }).then((result) => {
             setToken(result.data.data.register);
-            console.log(result.data.data.register)
+            console.log(result)
 
         }).catch(err => console.log(err));
 
@@ -56,7 +55,7 @@ const UserProvider = ({ children }) => {
     const iniciarSesion = async (correo, clave) => {
 
         return await axios({
-            url: `http://localhost:9301/sesion`,
+            url: `${API}/sesion`,
             method: 'post',
             //include a header with the token for other requests to the server
             //headers: { Authorization: `bareur ${token}` },
@@ -82,17 +81,48 @@ const UserProvider = ({ children }) => {
 
     }
 
-    // const LoadUsuarios = async () => {
-    //     await axios.get(`${API}/usuario/usuarios`)
-    //         .then(response => setUsuarios(response.data))
-    //         .catch(err => console.log(err));
-    // }
+    const LoadUsuarios = async () => {
+        setUsuarios([
+            {
+              nombre: "usuario 1",
+              correo: "correo 1",
+              direccion: 'cardiologia.jpg',
+              numero:31567652662,
+              id:1,
+            },
+            {
+              nombre: "usuario 1",
+              correo: "correo 1",
+              direccion: "cardiologia.jpg",
+              numero:31567652662,
+              id:2,
+            },
+            {
+              nombre: "usuario 1",
+              correo: "correo 1",
+              direccion: "cardiologia.jpg",
+              numero:31567652662,
+              id:3,
+            },
+            {
+              nombre: "usuario 1",
+              correo: "precio 1",
+              direccion: "cardiologia.jpg",
+              numero:31567652662,
+              id:4,
+            },
+          ]);
+        // await axios.get(`${API}/usuario/usuarios`)
+        //     .then(response => setUsuarios(response.data))
+        //     .catch(err => console.log(err));
+    }
 
-    // const DeleteUsuario = async (idUser) => {
+    const DeleteUsuario = async (idUser) => {
+        alert("se supone que se borra el usuario "+ idUser)
     //     await axios.delete(`${API}/usuario/remove/${idUser}`)
     //         .then(window.location.reload(true))
     //         .catch(err => console.log(err));
-    // }
+    }
 
     // const UpdateUsuario = async (idUser, data) => {
     //     await axios.put(`${API}/usuario/update/${idUser}`, data)
@@ -108,8 +138,8 @@ const UserProvider = ({ children }) => {
 
     return (
         <UserContext.Provider value={{
-            // DeleteUsuario,
-            // LoadUsuarios,
+            DeleteUsuario,
+            LoadUsuarios,
             // UpdateUsuario,
             // CreateUsuario,
             usuarios,
