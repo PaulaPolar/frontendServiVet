@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Documentacion from "./pages/Documentacion";
 import Productos from "./pages/Productos";
 import Conocenos from "./pages/Conocenos";
-import Dudas from "./pages/Dudas";
+import Citas from "./pages/Citas";
 import Servicios from "./pages/Servicios";
 import Registro from "./pages/Registro";
 import Login from "./pages/Login";
@@ -26,7 +26,7 @@ function App() {
           <Route path="/documentacion" exact component={Documentacion} />
           <Route path="/productos" exact component={Productos} />
           <Route path="/conocenos" exact component={Conocenos} />
-          <Route path="/dudas" exact component={Dudas} />
+          <Route path="/citas" exact component={Citas} />
           <Route path="/servicios" exact component={Servicios} />
           <Route path="/login" exact component={Login} />
           <Route path="/registro" exact component={Registro} />

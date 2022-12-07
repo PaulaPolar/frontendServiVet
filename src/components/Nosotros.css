@@ -1,0 +1,194 @@
+.quienes-somos {
+    max-width: 1120px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: block;
+    height: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+.titulo{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    margin-bottom: 50px;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.h1{
+    font-size: 50px;
+ height: 44px;
+  margin-top: 20px;
+      font-weight: bold;
+    margin-bottom: 10px;
+}
+.img{
+    height: 332.98828125px;
+}
+
+.textos {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    grid-column-gap: 100px;
+    grid-row-gap: 100px;
+}
+
+.mision {
+    display: block;
+}
+
+.heading-2{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+}
+.nosotros{
+    margin-bottom: 0px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    padding-right: 60px;
+    padding-left: 60px;
+    background-color: #047a9e;
+    color: #333;
+}
+
+
+.contenedor{
+    display: block;
+    max-width: 1120px;
+    margin-right: auto;
+    margin-left: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.h2-mb50 {
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+.empleados{
+    display: flex;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.e-especificomb50{
+    width: 50%;
+    margin-bottom: 50px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+}
+.foto{
+    background-color: #fff;
+    width: auto;
+    height: auto;
+    max-width: none;
+    padding: 40px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #333;
+}
+.foto-empleado{
+    width: auto;
+    height: 200px;
+    max-width: none;
+    border-radius: 100%;
+    background-color: rgb(163, 162, 162);
+}
+
+.nombre {
+    margin-bottom: 5px;
+}
+
+.descripcion-cargo {
+    color: #fff;
+}
+
+.visitanos{
+    padding: 100px 60px;
+    background-color: #fff;
+}
+
+.contenedorinfo{
+    display: block;
+    max-width: 1120px;
+    margin-right: auto;
+    margin-left: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    color: #333;
+    text-align: center;
+}
+
+.divcontenedor{
+    display: flex;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.h1visitanos{
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    padding: 0px;
+    font-size: 50px;
+    color: #333;
+
+}
+
+.infovisitanos{
+    width: 70%;
+    -webkit-box-direction: normal;
+}
+
+.direccion{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.numero{
+    margin-top: 0;
+    margin-bottom: 10px;
+}

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Producto from "../components/Producto";
 
 
+
 import "../App.css";
 
 const Products = ({ }) => {
@@ -128,6 +129,7 @@ const Products = ({ }) => {
         <img class="rounded-full border border-gray-100 shadow-sm" src={require(`../img/bacteria.jpg`).default} alt="user image" />
         <div class="absolute top-0 right-0 h-4 w-4 my-1 border-2 border-white rounded-full bg-green-400 z-2"></div>
       </div>
+
 
       <div class="flex max-w-md overflow-hidden bg-white rounded-lg shadow-lg">
         <img src={require(`../img/bacteria.jpg`).default} alt="user image" />

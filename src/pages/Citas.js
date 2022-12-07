@@ -2,14 +2,13 @@ import React from "react";
 import Nav from "../components/Nav";
 
 import Footer from "../components/Footer";
-import Dudita from "../components/Dudita";
+import Citas from "../components/Citas";
 
 const Dudas = () => {
   return (
     <div>
       <Nav />
-      <Dudita />
-
+      <Citas/>
       <Footer />
     </div>
   );

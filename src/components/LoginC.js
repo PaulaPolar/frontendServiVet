@@ -9,7 +9,6 @@ const LoginC = () => {
   const [correo, setCorreo] = useState("");
   const [clave, setClave] = useState("");
   const [logged, setLogged] = useState(false);
-  const navigate = useNavigate();
 
   if (logged) {
     return (
