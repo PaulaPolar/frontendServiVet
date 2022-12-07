@@ -1,6 +1,6 @@
 
-import { Fragment, useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { useState, useContext } from "react";
+import { Link, useHistory } from "react-router-dom";
 import UserContext from "../context/UserContext.js";
 
 import "../App.css";
@@ -16,6 +16,12 @@ const Regist = () => {
   const [apellidos, setApellidos] = useState("");
   const [celular, setCelular] = useState("");
   const [direccion, setDireccion] = useState("");
+
+  const history = useHistory();
+  const routeChange = () => {
+    let path = `/login`;
+    history.push(path);
+  }
 
   return (
 
@@ -90,7 +96,17 @@ const Regist = () => {
               ></input>
             </div>
             <div className="mt-7">
-              <button onClick={() => { clave === confirmClave ? registrarUsuario(nombre, correo, clave, apellidos, celular, direccion) : alert("Las claves no coinciden") }} className="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+              <button onClick={async () => {
+
+                if (clave === confirmClave) {
+                  await registrarUsuario(nombre, correo, clave, apellidos, celular, direccion);
+                  routeChange();
+                } else {
+                  alert("Las claves no coinciden")
+                }
+
+
+              }} className="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
                 Registrar
               </button>
             </div>
