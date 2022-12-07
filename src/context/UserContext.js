@@ -8,30 +8,33 @@ const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
 
-    const [usuarios, setUsuarios] = useState([]);
-    const [usuario, setUsuario] = useState([]);
-    const [token, setToken] = useState([]);
+  const [usuarios, setUsuarios] = useState([]);
+  const [usuario, setUsuario] = useState([]);
+  const [token, setToken] = useState([]);
 
-    const cerrarSesion = async () => {
-        setToken("");
-    }
 
-    const registrarUsuario = async (nombre, correo, clave, apellidos, celular, direccion) => {
 
-        console.log(nombre);
-        console.log(correo);
-        console.log(clave);
-        console.log(apellidos);
-        console.log(celular);
-        console.log(direccion);
+  const cerrarSesion = async () => {
+    setToken("");
+    localStorage.setItem('token', "");
+  }
 
-        return await axios({
-            url: API,
-            method: 'post',
-            data: {
-                query: `
+  const registrarUsuario = async (nombre, correo, clave, apellidos, celular, direccion) => {
+
+    console.log(nombre);
+    console.log(correo);
+    console.log(clave);
+    console.log(apellidos);
+    console.log(celular);
+    console.log(direccion);
+
+    return await axios({
+      url: API + "/sesion",
+      method: 'post',
+      data: {
+        query: `
                 mutation {
-                    register (
+                  register (
                       
                       correo: "${correo}"
                       clave: "${clave}"
@@ -43,24 +46,25 @@ const UserProvider = ({ children }) => {
                     )
                   }
                 `
-            }
-        }).then((result) => {
-            setToken(result.data.data.register);
-            console.log(result)
+      }
+    }).then((result) => {
+      setToken(result.data.data.register);
+      localStorage.setItem('token', result.data.data.register);
+      console.log(result)
 
-        }).catch(err => console.log(err));
+    }).catch(err => console.log(err));
 
-    }
+  }
 
-    const iniciarSesion = async (correo, clave) => {
+  const iniciarSesion = async (correo, clave) => {
 
-        return await axios({
-            url: `${API}/sesion`,
-            method: 'post',
-            //include a header with the token for other requests to the server
-            //headers: { Authorization: `bareur ${token}` },
-            data: {
-                query: `
+    return await axios({
+      url: `${API}/sesion`,
+      method: 'post',
+      //include a header with the token for other requests to the server
+      //headers: { Authorization: `bareur ${token}` },
+      data: {
+        query: `
                 mutation {
                     login (
                       
@@ -70,88 +74,87 @@ const UserProvider = ({ children }) => {
                     )
                   }
                 `
-            }
-        }).then((result) => {
-            setToken(result.data.data.login)
-            console.log(result.data.data.login)
-            return result.data.data.login
+      }
+    }).then((result) => {
+      setToken(result.data.data.login)
+      localStorage.setItem('token', result.data.data.login);
+      console.log(result.data.data.login)
+      return result.data.data.login
 
-        }).catch(err => console.log(err));
+    }).catch(err => console.log(err));
 
 
-    }
+  }
 
-    const LoadUsuarios = async () => {
-        setUsuarios([
-            {
-              nombre: "usuario 1",
-              correo: "correo 1",
-              direccion: 'cardiologia.jpg',
-              numero:31567652662,
-              id:1,
-            },
-            {
-              nombre: "usuario 1",
-              correo: "correo 1",
-              direccion: "cardiologia.jpg",
-              numero:31567652662,
-              id:2,
-            },
-            {
-              nombre: "usuario 1",
-              correo: "correo 1",
-              direccion: "cardiologia.jpg",
-              numero:31567652662,
-              id:3,
-            },
-            {
-              nombre: "usuario 1",
-              correo: "precio 1",
-              direccion: "cardiologia.jpg",
-              numero:31567652662,
-              id:4,
-            },
-          ]);
-        // await axios.get(`${API}/usuario/usuarios`)
-        //     .then(response => setUsuarios(response.data))
-        //     .catch(err => console.log(err));
-    }
+  const LoadUsuarios = async () => {
+    setUsuarios([
+      {
+        nombre: "usuario 1",
+        correo: "correo 1",
+        direccion: 'cardiologia.jpg',
+        numero: 31567652662,
+        id: 1,
+      },
+      {
+        nombre: "usuario 1",
+        correo: "correo 1",
+        direccion: "cardiologia.jpg",
+        numero: 31567652662,
+        id: 2,
+      },
+      {
+        nombre: "usuario 1",
+        correo: "correo 1",
+        direccion: "cardiologia.jpg",
+        numero: 31567652662,
+        id: 3,
+      },
+      {
+        nombre: "usuario 1",
+        correo: "precio 1",
+        direccion: "cardiologia.jpg",
+        numero: 31567652662,
+        id: 4,
+      },
+    ]);
+    // await axios.get(`${API}/usuario/usuarios`)
+    //     .then(response => setUsuarios(response.data))
+    //     .catch(err => console.log(err));
+  }
 
-    const DeleteUsuario = async (idUser) => {
-        alert("se supone que se borra el usuario "+ idUser)
+  const DeleteUsuario = async (idUser) => {
+    alert("se supone que se borra el usuario " + idUser)
     //     await axios.delete(`${API}/usuario/remove/${idUser}`)
     //         .then(window.location.reload(true))
     //         .catch(err => console.log(err));
-    }
+  }
 
-    // const UpdateUsuario = async (idUser, data) => {
-    //     await axios.put(`${API}/usuario/update/${idUser}`, data)
-    //         .then(LoadUsuarios())
-    //         .catch(err => console.log(err));
-    // }
+  // const UpdateUsuario = async (idUser, data) => {
+  //     await axios.put(`${API}/usuario/update/${idUser}`, data)
+  //         .then(LoadUsuarios())
+  //         .catch(err => console.log(err));
+  // }
 
-    // const CreateUsuario = async (datos) => {
-    //     await axios.post(`${API}/usuario/crear`, datos)
-    //         .then(LoadUsuarios())
-    //         .catch(err => console.log("error al enviar datos" + err));
-    // }
+  // const CreateUsuario = async (datos) => {
+  //     await axios.post(`${API}/usuario/crear`, datos)
+  //         .then(LoadUsuarios())
+  //         .catch(err => console.log("error al enviar datos" + err));
+  // }
 
-    return (
-        <UserContext.Provider value={{
-            DeleteUsuario,
-            LoadUsuarios,
-            // UpdateUsuario,
-            // CreateUsuario,
-            usuarios,
-            usuario,
-            setUsuario,
-            registrarUsuario,
-            iniciarSesion
-
-        }}>
-            {children}
-        </UserContext.Provider>
-    )
+  return (
+    <UserContext.Provider value={{
+      DeleteUsuario,
+      LoadUsuarios,
+      usuarios,
+      usuario,
+      setUsuario,
+      registrarUsuario,
+      iniciarSesion,
+      cerrarSesion
+    }}>
+      {children}
+    </UserContext.Provider>
+  )
 }
 
 export { UserProvider };

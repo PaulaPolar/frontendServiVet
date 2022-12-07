@@ -1,5 +1,5 @@
-import { useState, useContext, Navigate } from "react";
-import { Link } from "react-router-dom";
+import { useState, useContext } from "react";
+import { Link, useHistory } from "react-router-dom";
 import UserContext from "../context/UserContext.js";
 
 const LoginC = () => {
@@ -8,16 +8,11 @@ const LoginC = () => {
 
   const [correo, setCorreo] = useState("");
   const [clave, setClave] = useState("");
-  const [logged, setLogged] = useState(false);
-
-  if (logged) {
-    return (
-      <div>
-        <Navigate to="/home" />
-      </div>);
-
-  } else {
-
+  const history = useHistory();
+  const routeChange = () => {
+    let path = `/pacientes`;
+    history.push(path);
+  }
     return (
 
       <div className="font-sans">
@@ -50,54 +45,56 @@ const LoginC = () => {
                   </div>
                 </div>
                 <div className="mt-7">
+                <button onClick={async (e) => {
+                  e.preventDefault();
+                  await iniciarSesion(correo, clave).then((res) => {
+                    routeChange()
+                  }).catch((err) =>
+                    alert("No se pudo inciar sesion!")
+                  );
 
-                  <button onClick={async () => {
 
-                    // await iniciarSesion(correo, clave) ? setLogged(true) : setLogged(false)
-                    let response = await iniciarSesion(correo, clave)
-                    response != null ? setLogged(true) : alert("Credenciales incorrectas!");
+                }} className="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                  Login
+                </button>
 
-                  }} className="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-                    Login
-                  </button>
+              </div>
+              <div className="flex mt-7 items-center text-center">
+                <hr className="border-gray-300 border-1 w-full rounded-md" />
+                <label className="block font-medium text-sm text-gray-600 w-full">
+                  Accede con
+                </label>
+                <hr className="border-gray-300 border-1 w-full rounded-md" />
+              </div>
+              <div className="flex mt-7 justify-center w-full">
+                <button className="mr-5 bg-blue-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                  Facebook
+                </button>
+                <button className="bg-red-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                  Google
+                </button>
+              </div>
+              <div className="mt-7">
+                <div className="flex justify-center items-center">
+                  <label className="mr-2">¿Eres nuevo?</label>
+
+                  <Link className=" text-blue-500 transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105"
+                    href="/#"
+                    to="/registro"
+                  >
+                    Crea una cuenta
+                  </Link>
 
                 </div>
-                <div className="flex mt-7 items-center text-center">
-                  <hr className="border-gray-300 border-1 w-full rounded-md" />
-                  <label className="block font-medium text-sm text-gray-600 w-full">
-                    Accede con
-                  </label>
-                  <hr className="border-gray-300 border-1 w-full rounded-md" />
-                </div>
-                <div className="flex mt-7 justify-center w-full">
-                  <button className="mr-5 bg-blue-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-                    Facebook
-                  </button>
-                  <button className="bg-red-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-                    Google
-                  </button>
-                </div>
-                <div className="mt-7">
-                  <div className="flex justify-center items-center">
-                    <label className="mr-2">¿Eres nuevo?</label>
-
-                    <Link className=" text-blue-500 transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105"
-                      href="/#"
-                      to="/registro"
-                    >
-                      Crea una cuenta
-                    </Link>
-
-                  </div>
-                </div>
-              </form>
-            </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
+    </div>
 
-    );
-  }
+  );
+
 };
 
 export default LoginC;
