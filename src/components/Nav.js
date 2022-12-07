@@ -177,9 +177,9 @@ const Nav = () => {
                 <Link
                   className="font-bold text-3xl text-white hover:text-green-400"
                   href="/#"
-                  to="/dudas"
+                  to="/citas"
                 >
-                  Dudas
+                  Citas
                 </Link>
               </li>
               <li className="text-gray-300">

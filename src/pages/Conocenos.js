@@ -4,15 +4,12 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 
 import Nosotros from "../components/Nosotros";
-import InfoVet from "../components/InfoVet";
 
 const Conocenos = () => {
   return (
     <div>
-      <Nav />ç
-      <InfoVet />
+      <Nav />
      <Nosotros />
-     
       <Footer />     
   
     </div>

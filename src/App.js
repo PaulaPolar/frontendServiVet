@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Pacientes from "./pages/Pacientes";
 import Productos from "./pages/Productos";
 import Conocenos from "./pages/Conocenos";
-import Dudas from "./pages/Dudas";
+import Citas from "./pages/Citas";
 import Sabiasque from "./pages/Sabiasque";
 import Servicios from "./pages/Servicios";
 import Registro from "./pages/Registro";
@@ -27,7 +27,7 @@ function App() {
           <Route path="/pacientes" exact component={Pacientes} />
           <Route path="/productos" exact component={Productos} />
           <Route path="/conocenos" exact component={Conocenos} />
-          <Route path="/dudas" exact component={Dudas} />
+          <Route path="/citas" exact component={Citas} />
           <Route path="/sabiasque" exact component={Sabiasque} />
           <Route path="/servicios" exact component={Servicios} />
           <Route path="/login" exact component={Login} />
