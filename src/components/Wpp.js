@@ -6,7 +6,7 @@ const Wpp = ({ }) => {
     return (
         <Fragment>
             <div className="container-boton">
-                <a href="https://wa.me/987654321?text=Quiero%20realizar%20un%20proyecto%20web%20php" target="_blank">
+                <a href="https://wa.me/573174587155?text=Saber%20mas%20acerca%20de%20la%20veterinaria" target="_blank">
                     <img className="boton" src={require(`../img/wpp.png`).default} alt="obtener informacion" />
                 </a>
             </div>

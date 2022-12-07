@@ -65,7 +65,7 @@ const Pacients = () => {
                 </div>
 
                 <div class="m-4 col-span-1 sm:col-span-2 p-8 bg-white rounded-xl flex justify-center items-center">
-                    <p class="font-medium text-gray-600">Content</p>
+                    <p class="font-medium text-gray-600">documentacion</p>
                 </div>
             </div>
         </Fragment>
