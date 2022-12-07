@@ -4,16 +4,18 @@ import Carosel from "../components/Carosel";
 
 import Footer from "../components/Footer";
 import Card from "../components/Card";
-import Botones from "../components/Botones";
+
+import User from "../components/User";
 
 const Home = () => {
   return (
     <div>
       <Nav />
       <Carosel />
-      <Botones />
       <Card />
-      <Footer />     
+      <Footer />
+     
+      
   
     </div>
   );

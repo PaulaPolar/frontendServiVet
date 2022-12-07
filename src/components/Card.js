@@ -31,205 +31,88 @@ export default function Card() {
 
   return (
     <>
-      <div className="relative m-10 flex mt-7 items-center text-center">
-        <hr className="border-gray-400 border-1 w-full rounded-md"></hr>
-        <label className="block font-bold text-6xl text-black w-full">
-          Adoptame
-        </label>
-        <hr className="border-gray-400 border-1 w-full rounded-md"></hr>
-      </div>
-      <section className="m-20 grid grid-cols-4 gap-0">
-        <button
-          type="button"
-          onClick={openModal}
-          className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          <img src={img1} alt="" />
-        </button>
-        <button
-          type="button"
-          onClick={openModal}
-          className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          <img src={img2} alt="" />
-        </button>
-        <button
-          type="button"
-          onClick={openModal}
-          className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          <img src={img3} alt="" />
-        </button>
-        <button
-          type="button"
-          onClick={openModal}
-          className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          <img src={img4} alt="" />
-        </button>
-        <button
-          type="button"
-          onClick={openModal}
-          className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          <img src={img5} alt="" />
-        </button>
-        <button
-          type="button"
-          onClick={openModal}
-          className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          <img src={img6} alt="" />
-        </button>
-        <button
-          type="button"
-          onClick={openModal}
-          className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          <img src={img7} alt="" />
-        </button>
-        <button
-          type="button"
-          onClick={openModal}
-          className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          <img src={img8} alt="" />
-        </button>
-        <button
-          type="button"
-          onClick={openModal}
-          className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          <img src={img9} alt="" />
-        </button>
-        <button
-          type="button"
-          onClick={openModal}
-          className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          <img src={img10} alt="" />
-        </button>
-        <button
-          type="button"
-          onClick={openModal}
-          className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          <img src={img11} alt="" />
-        </button>
-        <button
-          type="button"
-          onClick={openModal}
-          className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          <img src={img12} alt="" />
-        </button>
-        <button
-          type="button"
-          onClick={openModal}
-          className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          <img src={img13} alt="" />
-        </button>
-        <button
-          type="button"
-          onClick={openModal}
-          className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          <img src={img14} alt="" />
-        </button>
-        <button
-          type="button"
-          onClick={openModal}
-          className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          <img src={img15} alt="" />
-        </button>
-        <button
-          type="button"
-          onClick={openModal}
-          className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-        >
-          <img src={img16} alt="" />
-        </button>
-      </section>
+      <section>
+        <div class="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
+          <header class="text-center">
+            <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">
+              Nuestras secciones!
+            </h2>
 
-      <div className="relative m-10 flex mt-7 items-center text-center">
-        <hr className="border-gray-400 border-1 w-full rounded-md"></hr>
-      </div>
+            <p class="max-w-md mx-auto mt-4 text-gray-500">
+              Navega por los diferentes servicios que te ofrecemos en nuestra pagina web, 
+              para que puedas hacer uso de ellas o informarte sobre nuestra clinica.
+            </p>
+          </header>
 
-      <Transition appear show={isOpen} as={Fragment}>
-        <Dialog
-          as="div"
-          className="fixed inset-0 z-10 overflow-y-auto"
-          onClose={closeModal}
-        >
-          <div className="min-h-screen px-4 text-center">
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0"
-              enterTo="opacity-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100"
-              leaveTo="opacity-0"
-            >
-              <Dialog.Overlay className="fixed inset-0" />
-            </Transition.Child>
+          <ul class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-3">
+            <li>
+              <a href="/productos" class="relative block group">
+                <img
+                 src={require(`../img/productos.jpg`).default}
+                  alt=""
+                  class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90"
+                />
 
-            {/* This element is to trick the browser into centering the modal contents. */}
-            <span
-              className="inline-block h-screen align-middle"
-              aria-hidden="true"
-            >
-              &#8203;
-            </span>
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
-            >
-              <div className="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
-                <Dialog.Title
-                  as="h3"
-                  className="text-lg font-medium leading-6 text-gray-900"
+                <div
+                  class="absolute inset-0 flex flex-col items-start justify-end p-6"
                 >
-                  <b> Hola, ¿quieres ser mi amigo? </b>
-                </Dialog.Title>
-                <div className="mt-2">
-                  <p className="text-sm text-gray-500">
-                    Mi nombre es peludito, tengo 2 meses, soy jugueton, soy
-                    tamaño mediano, soy timido y me gustaria tener un hogar y
-                    convivir contigo. Sere tu mejor amigo si me lo permites.
-                    Adoptame :3
-                  </p>
-                </div>
+                  <h3 class="text-xl font-medium text-black">Productos disponibles! </h3>
 
-                <div className="mt-4">
-                  <Link
-                    className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-blue-300 hover:bg-blue-100 text-xl text-gray-900 font-bold  rounded-xl transition duration-200"
-                    href="/#"
-                    to="/adoptar"
+                  <span
+                    class="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
                   >
-                    Adoptar
-                  </Link>
-
-                  <button
-                    type="button"
-                    className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-blue-300 hover:bg-blue-100 text-xl text-gray-900 font-bold  rounded-xl transition duration-200"
-                    onClick={closeModal}
-                  >
-                    Cerrar
-                  </button>
+                    Visitar ahora
+                  </span>
                 </div>
-              </div>
-            </Transition.Child>
-          </div>
-        </Dialog>
-      </Transition>
+              </a>
+            </li>
+
+            <li>
+              <a href="/servicios" class="relative block group">
+                <img
+                   src={require(`../img/servicios.jpg`).default}
+                  alt=""
+                  class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90"
+                />
+
+                <div
+                  class="absolute inset-0 flex flex-col items-start justify-end p-6"
+                >
+                  <h3 class="text-xl font-medium text-black">Servicios disponibles! </h3>
+
+                  <span
+                    class="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
+                  >
+                    Visitar ahora
+                  </span>
+                </div>
+              </a>
+            </li>
+
+            <li class="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
+              <a href="#" class="relative block group">
+                <img
+                   src={require(`../img/citas.png`).default}
+                  alt=""
+                  class="object-cover w-full transition duration-500 aspect-square group-hover:opacity-90"
+                />
+
+                <div
+                  class="absolute inset-0 flex flex-col items-start justify-end p-6"
+                >
+                  <h3 class="text-xl font-medium text-black">Programate una cita con nosotros!</h3>
+
+                  <span
+                    class="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"
+                  >
+                    Visitar ahora
+                  </span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
     </>
   );
 }

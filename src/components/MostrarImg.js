@@ -1,11 +1,13 @@
 import React from "react";
 import { API } from "../config";
 
-const MostrarImg = ({ item, url }) => {
+const MostrarImg = ({ item}) => {
+  let ruta = ".jpg"
   return (
     <div className="product-img">
+      {console.log(ruta)}
       <img
-        src={`../img/${item.imagen}`}
+        src={require(`../img/${item.imagen}`).default}
         alt={item.nombre}
         className="mb3 img-cont"
         style={{ maxHeight: "600px", maxwidth: "300px" }}

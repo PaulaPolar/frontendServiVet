@@ -59,7 +59,7 @@ const Nav = () => {
               <img className="h-16" src={Logo} alt="page logo" />
             </a>
           </div>
-          <div>
+          <div className="mt-8">
             <Titulo>ServiVet</Titulo>
           </div>
         </div>
@@ -95,6 +95,13 @@ const Nav = () => {
             >
               Registrarse
             </Link>
+            <a href="#" class="flex  font-medium text-gray-600 hover:text-green-400 p-2 rounded-lg hover:bg-green-100">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}" stroke="currentColor" class="mr-3 h-6 w-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+              </svg>
+
+              Logout
+            </a>
           </div>
           <div className="">
             <ul className="hidden transform translate-y-2  lg:content-end lg:flex lg:items-center lg:w-auto px-4">
@@ -232,6 +239,56 @@ const Nav = () => {
                   Usuarios
                 </Link>
               </li>
+              <li className="text-gray-300">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  className="w-5 h-5 current-fill"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+                  />
+                </svg>
+              </li>
+              <li>
+                <Link
+                  className="font-bold text-3xl text-white hover:text-green-400"
+                  href="/#"
+                  to="/perfil"
+                >
+                  Perfil
+                </Link>
+              </li>
+              <li className="text-gray-300">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  className="w-5 h-5 current-fill"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
+                  />
+                </svg>
+              </li>
+              <li>
+                <Link
+                  className="font-bold text-3xl text-white hover:text-green-400"
+                  href="/#"
+                  to="/Documentacion"
+                >
+                  Docs
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -306,6 +363,24 @@ const Nav = () => {
                   to="/NFT"
                 >
                   Servicios
+                </Link>
+              </li>
+              <li className="mb-1">
+                <Link
+                  className="block p-4 text-sm font-semibold text-white hover:bg-gray-500 hover:text-green-400 rounded"
+                  href="/#"
+                  to="/NFT"
+                >
+                  Perfil
+                </Link>
+              </li>
+              <li className="mb-1">
+                <Link
+                  className="block p-4 text-sm font-semibold text-white hover:bg-gray-500 hover:text-green-400 rounded"
+                  href="/#"
+                  to="/NFT"
+                >
+                  Docs
                 </Link>
               </li>
             </ul>

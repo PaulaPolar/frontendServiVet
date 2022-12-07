@@ -16,15 +16,15 @@ const Carosel = () => {
       >
         <Slide>
           <Link
-            to="/adoptar"
+            to="/servicios"
             className="font-bold text-3xl text-green-400  hover:text-white"
             href="/#"
           >
             <img src={img2} alt="" />
           </Link>
           <TextoSlide>
-            <p>¿Quieres conocer a tu mejor amigo?</p>
-            <p>Adoptame!!!</p>
+            <p>Conoce en que podemos servir a tu mascota</p>
+            <p>Revisa nuestros servicos!!!</p>
             
           </TextoSlide>
           

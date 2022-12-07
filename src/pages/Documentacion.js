@@ -2,17 +2,18 @@ import React from "react";
 import Nav from "../components/Nav";
 
 import Footer from "../components/Footer";
-import FormAdoptar from "../components/FormAdoptar";
+import DocumentacionComponent from "../components/Documentacion";
 
-const Adoptar = () => {
+const Documentacion = () => {
   return (
     <div>
       <Nav />
-      <FormAdoptar />
+      <DocumentacionComponent />
+     
       <Footer />     
   
     </div>
   );
 };
 
-export default Adoptar;
+export default Documentacion;

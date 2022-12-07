@@ -15,7 +15,7 @@ const Footer = () => {
               <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
                 <Gato />
                 <span class="ml-3 text-xl text-white">
-                  Clínica Veterinaria lupita.
+                  Clínica Veterinaria ServiVet.
                 </span>
               </a>
               <p class="mt-2 text-sm text-white">
@@ -34,27 +34,9 @@ const Footer = () => {
                     <Link
                       className="text-white hover:text-red-300"
                       href="/#"
-                      to="/Dudas"
+                      to="/documentacion"
                     >
-                      Contactanos
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className="text-white hover:text-red-300"
-                      href="/#"
-                      to="/Sabiasque"
-                    >
-                      Curiosidades
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      className="text-white hover:text-red-300"
-                      href="/#"
-                      to="/pacientes"
-                    >
-                      Nuestros pacientes
+                      Docs
                     </Link>
                   </li>
                 </nav>

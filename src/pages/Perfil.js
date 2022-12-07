@@ -2,18 +2,16 @@ import React from "react";
 import Nav from "../components/Nav";
 
 import Footer from "../components/Footer";
-import Pacients from "../components/Pacients";
+import PerfilComponent from "../components/Perfil";
 
-const Pacientes = () => {
+const Perfil = () => {
   return (
     <div>
       <Nav />
-      <Pacients />
-     
-      <Footer />     
-  
+      <PerfilComponent />
+      <Footer />
     </div>
   );
 };
 
-export default Pacientes;
+export default Perfil;

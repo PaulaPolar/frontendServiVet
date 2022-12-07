@@ -158,7 +158,10 @@ const Usuario = ({ usuario }) => {
       </td>
     </tr>
 
+    
+
     </>
+    
   );
 
  
