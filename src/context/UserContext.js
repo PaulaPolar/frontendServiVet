@@ -8,10 +8,13 @@ const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
 
+  const [token, setToken] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
   const [usuario, setUsuario] = useState([]);
-  const [token, setToken] = useState([]);
-
+  const [productos, setProductos] = useState([]);
+  const [producto, setProducto] = useState([]);
+  const [servicios, setServicios] = useState([]);
+  const [servicio, setServicio] = useState([]);
 
 
   const cerrarSesion = async () => {
@@ -117,6 +120,8 @@ const UserProvider = ({ children }) => {
         id: 4,
       },
     ]);
+
+    
     // await axios.get(`${API}/usuario/usuarios`)
     //     .then(response => setUsuarios(response.data))
     //     .catch(err => console.log(err));
@@ -141,16 +146,228 @@ const UserProvider = ({ children }) => {
   //         .catch(err => console.log("error al enviar datos" + err));
   // }
 
+  const LoadProductos = async () => {
+    setProductos([
+      {
+        id:1,
+        nombre: "producto 1",
+        precio: "precio 1",
+        imagen: "ballena.jpg"
+      },
+      {
+        id:2,
+        nombre: "producto 1",
+        precio: "precio 1",
+        imagen: "ballena.jpg"
+      },
+      {
+        id:3,
+        nombre: "producto 1",
+        precio: "precio 1",
+        imagen: "ballena.jpg"
+      },
+      {
+        id:4,
+        nombre: "producto 1",
+        precio: "precio 1",
+        imagen: "ballena.jpg"
+      },
+      {
+        id:5,
+        nombre: "producto 1",
+        precio: "precio 1",
+        imagen: "ballena.jpg"
+      },
+      {
+        id:2,
+        nombre: "producto 1",
+        precio: "precio 1",
+        imagen: "ballena.jpg"
+      },
+      {
+        id:2,
+        nombre: "producto 1",
+        precio: "precio 1",
+        imagen: "ballena.jpg"
+      },
+      {
+        id:2,
+        nombre: "producto 1",
+        precio: "precio 1",
+        imagen: "ballena.jpg"
+      },
+      {
+        id:2,
+        nombre: "producto 1",
+        precio: "precio 1",
+        imagen: "ballena.jpg"
+      },
+      {
+        id:2,
+        nombre: "producto 1",
+        precio: "precio 1",
+        imagen: "ballena.jpg"
+      },
+      {
+        id:2,
+        nombre: "producto 1",
+        precio: "precio 1",
+        imagen: "ballena.jpg"
+      },
+      {
+        id:2,
+        nombre: "producto 1",
+        precio: "precio 1",
+        imagen: "ballena.jpg"
+      },
+      {
+        id:2,
+        nombre: "producto 1",
+        precio: "precio 1",
+        imagen: "ballena.jpg"
+      },
+      {
+        id:2,
+        nombre: "producto 1",
+        precio: "precio 1",
+        imagen: "ballena.jpg"
+      },
+      {
+        id:2,
+        nombre: "producto 1",
+        precio: "precio 1",
+        imagen: "ballena.jpg"
+      },
+      {
+        id:2,
+        nombre: "producto 1",
+        precio: "precio 1",
+        imagen: "ballena.jpg"
+      },
+    ]);
+
+    
+    // await axios.get(`${API}/usuario/usuarios`)
+    //     .then(response => setUsuarios(response.data))
+    //     .catch(err => console.log(err));
+  }
+
+  const DeleteProducto = async (idProducto) => {
+    alert("se supone que se borra el producto " + idProducto)
+    //     await axios.delete(`${API}/usuario/remove/${idUser}`)
+    //         .then(window.location.reload(true))
+    //         .catch(err => console.log(err));
+  }
+   // const UpdateProducto = async (idProducto, data) => {
+  //     await axios.put(`${API}/usuario/update/${idUser}`, data)
+  //         .then(LoadUsuarios())
+  //         .catch(err => console.log(err));
+  // }
+
+  // const CreateProducto = async (datos) => {
+  //     await axios.post(`${API}/usuario/crear`, datos)
+  //         .then(LoadUsuarios())
+  //         .catch(err => console.log("error al enviar datos" + err));
+  // }
+
+  const LoadServicios = async () => {
+    setServicios([
+      {
+        id:1,
+        nombre: "servicio 1",
+        descripcion: "descripcion 1",
+        imagen: 'cardiologia.jpg'
+      },
+      {
+        id:2,
+        nombre: "servicio 1",
+        descripcion: "descripcion 1",
+        imagen: "cardiologia.jpg"
+      },
+      {
+        id:3,
+        nombre: "servicio 1",
+        descripcion: "descripcion 1",
+        imagen: "cardiologia.jpg"
+      },
+      {
+        id:2,
+        nombre: "servicio 1",
+        descripcion: "precio 1",
+        imagen: "cardiologia.jpg"
+      },
+      {
+        id:2,
+        nombre: "servicio 1",
+        descripcion: "descripcion 1",
+        imagen: 'cardiologia.jpg'
+      },
+      {
+        id:2,
+        nombre: "servicio 1",
+        descripcion: "descripcion 1",
+        imagen: "cardiologia.jpg"
+      },
+      {
+        id:2,
+        nombre: "servicio 1",
+        descripcion: "descripcion 1",
+        imagen: "cardiologia.jpg"
+      },
+      {
+        id:2,
+        nombre: "servicio 1",
+        descripcion: "precio 1",
+        imagen: "cardiologia.jpg"
+      },
+    ]);
+
+    
+    // await axios.get(`${API}/usuario/usuarios`)
+    //     .then(response => setUsuarios(response.data))
+    //     .catch(err => console.log(err));
+  }
+
+  const DeleteServicio = async (idServicio) => {
+    alert("se supone que se borra el servicio " + idServicio)
+    //     await axios.delete(`${API}/usuario/remove/${idUser}`)
+    //         .then(window.location.reload(true))
+    //         .catch(err => console.log(err));
+  }
+
+   // const UpdateServicio = async (idServicio, data) => {
+  //     await axios.put(`${API}/usuario/update/${idUser}`, data)
+  //         .then(LoadUsuarios())
+  //         .catch(err => console.log(err));
+  // }
+
+  // const CreateServicio = async (datos) => {
+  //     await axios.post(`${API}/usuario/crear`, datos)
+  //         .then(LoadUsuarios())
+  //         .catch(err => console.log("error al enviar datos" + err));
+  // }
+
   return (
     <UserContext.Provider value={{
-      DeleteUsuario,
-      LoadUsuarios,
-      usuarios,
-      usuario,
-      setUsuario,
       registrarUsuario,
       iniciarSesion,
-      cerrarSesion
+      cerrarSesion,
+      DeleteUsuario,
+      LoadUsuarios,
+      usuario,
+      usuarios,
+      setUsuario,
+      DeleteProducto,
+      LoadProductos,
+      producto,
+      productos,
+      setProducto,
+      DeleteServicio,
+      LoadServicios,
+      servicio,
+      servicios,
+      setServicio
+      
     }}>
       {children}
     </UserContext.Provider>

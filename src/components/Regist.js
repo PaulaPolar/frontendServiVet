@@ -25,8 +25,8 @@ const Regist = () => {
 
   return (
 
-    <div className="font-sans">
-      <div className="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 ">
+    <div className="font-sans  m-8 ">
+      <div className="relative min-h-screen flex flex-col sm:justify-center items-center ">
         <div className="relative sm:max-w-sm w-full">
           <div className="card bg-blue-400 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
           <div className="card bg-red-400 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-6"></div>
@@ -107,22 +107,7 @@ const Regist = () => {
 
 
               }} className="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-                Registrar
-              </button>
-            </div>
-            <div className="flex mt-7 items-center text-center">
-              <hr className="border-gray-300 border-1 w-full rounded-md"></hr>
-              <label className="block font-medium text-sm text-gray-600 w-full">
-                Registrate con
-              </label>
-              <hr className="border-gray-300 border-1 w-full rounded-md"></hr>
-            </div>
-            <div className="flex mt-7 justify-center w-full">
-              <button className="mr-5 bg-blue-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-                Facebook
-              </button>
-              <button className="bg-red-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-                Google
+                Registrarse
               </button>
             </div>
             <div className="mt-7">
