@@ -264,31 +264,6 @@ const Nav = () => {
                   Perfil
                 </Link>
               </li>
-              <li className="text-gray-300">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  stroke="currentColor"
-                  className="w-5 h-5 current-fill"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"
-                  />
-                </svg>
-              </li>
-              <li>
-                <Link
-                  className="font-bold text-3xl text-white hover:text-green-400"
-                  href="/#"
-                  to="/Documentacion"
-                >
-                  Docs
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
