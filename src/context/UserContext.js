@@ -28,38 +28,58 @@ const UserProvider = ({ children }) => {
     console.log(celular);
     console.log(direccion);
 
-    return await axios({
-      url: API + "/sesion",
-      method: 'post',
-      data: {
-        query: `
-                mutation {
-                  register (
-                      
-                      correo: "${correo}"
-                      clave: "${clave}"
-                      nombres: "${nombre}"
-                      apellidos: "${apellidos}"
-                      numero_celular: "${celular}"
-                      direccion: "${direccion}"
-                      
-                    )
-                  }
-                `
-      }
-    }).then((result) => {
-      setToken(result.data.data.register);
-      localStorage.setItem('token', result.data.data.register);
-      console.log(result)
+    if (nombre == "") {
 
-    }).catch(err => console.log(err));
+    } else if (correo.match(
+      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    )) {
+
+    } else if (clave == "") {
+
+    } else if (apellidos == "") {
+
+    } else if (celular == "") {
+
+    } else if (direccion == "") {
+
+    } else {
+      return await axios({
+        url: "http://localhost:9301/sesion",
+        method: 'post',
+        data: {
+          query: `
+                  mutation {
+                    register (
+                        
+                        correo: "${correo}"
+                        clave: "${clave}"
+                        nombres: "${nombre}"
+                        apellidos: "${apellidos}"
+                        numero_celular: "${celular}"
+                        direccion: "${direccion}"
+                        
+                      )
+                    }
+                  `
+        }
+      }).then((result) => {
+        setToken(result.data.data.register);
+        localStorage.setItem('token', result.data.data.register);
+        console.log(result)
+
+      }).catch(err => console.log(err));
+
+    }
+
 
   }
 
   const iniciarSesion = async (correo, clave) => {
 
+    console.log(API);
+
     return await axios({
-      url: `${API}/sesion`,
+      url: "http://localhost:9301/sesion",
       method: 'post',
       //include a header with the token for other requests to the server
       //headers: { Authorization: `bareur ${token}` },
