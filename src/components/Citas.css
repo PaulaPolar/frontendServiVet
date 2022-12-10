@@ -34,7 +34,7 @@
 }
 
 .pop-up {
-    display: none;
+    display: flex;
     position: absolute;
     left: 0%;
     top: 0%;
@@ -257,7 +257,7 @@ input.w-button {
 }
 
 .pop-up2{
-    display: none;
+    display: flex;
     position: absolute;
     left: 0%;
     top: 0%;
