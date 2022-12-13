@@ -1,9 +1,22 @@
 import React from "react";
-import { Fragment } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 import "./Nosotros.css";
 import dogo from "../img/dogo.png";
 import user from "../img/user.png";
+import UserContext from "../context/UserContext";
+
 const Citas = () => {
+  const { LoadInfoVeterinaria, infoVeterinaria, LoadPersonal, personal } = useContext(UserContext);
+
+
+  useEffect(() => {
+    LoadInfoVeterinaria();
+    LoadPersonal();
+  }, []);
+
+
+
+
   return (
     <Fragment>
       <div className="quienes-somos">
@@ -16,70 +29,36 @@ const Citas = () => {
             <div className="mision">
               <h3 className="heading-2">Nuestra misión</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse varius enim in eros elementum tristique. Duis
-                cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
-                commodo diam libero vitae erat. Aenean faucibus nibh et justo
-                cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
-                tristique posuere.
+                {infoVeterinaria.mision}
               </p>
             </div>
             <div className="vision">
               <h3 className="heading-2">Nuestra vision</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse varius enim in eros elementum tristique. Duis
-                cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
-                commodo diam libero vitae erat. Aenean faucibus nibh et justo
-                cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus
-                tristique posuere.
+                {infoVeterinaria.vision}
               </p>
             </div>
           </div>
         </div>
       </div>
+
       <div className="nosotros">
         <div className="contenedor">
           <h2 className="h2-mb50"> Nosotros </h2>
           <div className="empleados">
-
-          <div className="e-especificomb50">
-              <div className="foto">
-                <img className="foto-empleado" src={user} alt="Empleado" />
-                <p className="nombre">Nombre</p>
-                <p className="cargo">Cargo</p>
-                <p className="experiencia">Experiencia</p>   
+            {personal.map((perfil, i) => (
+              <div className="e-especificomb50">
+                <div className="foto">
+                  <img className="foto-empleado" src={require(`../img/${perfil.imagen}`).default} alt="Empleado" />
+                  <p className="nombre"><b>Nombre: </b>{perfil.nombre}</p>
+                  <p className="cargo"><b>Cargo: </b>{perfil.cargo}</p>
+                  <p className="experiencia"><b>Experiencia: </b>Experiencia</p>
+                </div>
+                <p className="descripcion-cargo">
+                <b>Descripcion : </b>{perfil.descripcion}
+                </p>
               </div>
-              <p className="descripcion-cargo">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
-              </p>
-            </div>
-
-
-            <div className="e-especificomb50">
-              <div className="foto">
-                <img className="foto-empleado" src={user} alt="Empleado" />
-                <p className="nombre">Nombre</p>
-                <p className="cargo">Cargo</p>
-                <p className="experiencia">Experiencia</p>   
-              </div>
-              <p className="descripcion-cargo">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
-              </p>
-            </div>
-
-            <div className="e-especificomb50">
-              <div className="foto">
-                <img className="foto-empleado" src={user} alt="Empleado" />
-                <p className="nombre">Nombre</p>
-                <p className="cargo">Cargo</p>
-                <p className="experiencia">Experiencia</p>   
-              </div>
-              <p className="descripcion-cargo">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
-              </p>
-            </div>
-
+            ))}
           </div>
         </div>
       </div>
@@ -89,9 +68,9 @@ const Citas = () => {
           <div className="divcontenedor">
             <h1 className="h1visitanos">Visitanos</h1>
             <div className="infovisitanos">
-              <p className="direccion">Direccion: </p>
-              <p className="numero">Numero: 3043751465</p>
-              <p className="correo">Email: servivet32@gmail.com</p>
+              <p className="direccion"><b>Direccion: </b> {infoVeterinaria.direccion}</p>
+              <p className="numero"><b>Numero: </b> {infoVeterinaria.numero}</p>
+              <p className="correo"><b>Email: </b>{infoVeterinaria.correo}</p>
             </div>
           </div>
         </div>
