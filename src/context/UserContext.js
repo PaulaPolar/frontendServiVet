@@ -12,6 +12,7 @@ const UserProvider = ({ children }) => {
   const [usuarios, setUsuarios] = useState([]);
   const [usuario, setUsuario] = useState([]);
   const [productos, setProductos] = useState([]);
+  const [isModificar, setIsModificar] = useState([]);
   const [producto, setProducto] = useState([]);
   const [servicios, setServicios] = useState([]);
   const [servicio, setServicio] = useState([]);
@@ -172,97 +173,161 @@ const UserProvider = ({ children }) => {
         id:1,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca" 
       },
       {
         id:2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca" 
       },
       {
         id:3,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca" 
       },
       {
         id:4,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca" 
       },
       {
         id:5,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca" 
       },
       {
         id:2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca" 
       },
       {
         id:2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca" 
       },
       {
         id:2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca" 
       },
       {
         id:2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca" 
       },
       {
         id:2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca" 
       },
       {
         id:2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca" 
       },
       {
         id:2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca" 
       },
       {
         id:2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca" 
       },
       {
         id:2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",  
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca"      
       },
       {
         id:2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca" 
       },
       {
         id:2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca" 
       },
     ]);
 
@@ -278,17 +343,19 @@ const UserProvider = ({ children }) => {
     //         .then(window.location.reload(true))
     //         .catch(err => console.log(err));
   }
-   // const UpdateProducto = async (idProducto, data) => {
+    const UpdateProducto = async (idProducto, data, imagenEditada) => {
+      alert("se actualiza el producto - "+ idProducto+ "con los datos de - "+ data.nombre +" con la imagen editada "+imagenEditada)
   //     await axios.put(`${API}/usuario/update/${idUser}`, data)
   //         .then(LoadUsuarios())
   //         .catch(err => console.log(err));
-  // }
+   }
 
-  // const CreateProducto = async (datos) => {
+   const CreateProducto = async (datos) => {
+    alert("se crea el producto con - "+datos.nombre)
   //     await axios.post(`${API}/usuario/crear`, datos)
   //         .then(LoadUsuarios())
   //         .catch(err => console.log("error al enviar datos" + err));
-  // }
+   }
 
   const LoadServicios = async () => {
     setServicios([
@@ -355,17 +422,19 @@ const UserProvider = ({ children }) => {
     //         .catch(err => console.log(err));
   }
 
-   // const UpdateServicio = async (idServicio, data) => {
+   const UpdateServicio = async (idServicio, data, imagenEditada) => {
+    alert("se actualiza el servicio - "+ idServicio+ "con los datos de - "+ data.nombre+ " imagen --> "+imagenEditada)
   //     await axios.put(`${API}/usuario/update/${idUser}`, data)
   //         .then(LoadUsuarios())
   //         .catch(err => console.log(err));
-  // }
+   }
 
-  // const CreateServicio = async (datos) => {
+   const CreateServicio = async (datos) => {
+    alert("se crea el servicio con - "+ datos.nombre)
   //     await axios.post(`${API}/usuario/crear`, datos)
   //         .then(LoadUsuarios())
   //         .catch(err => console.log("error al enviar datos" + err));
-  // }
+   }
 
   return (
     <UserContext.Provider value={{
@@ -382,11 +451,17 @@ const UserProvider = ({ children }) => {
       producto,
       productos,
       setProducto,
-      DeleteServicio,
+      UpdateProducto,
+      CreateProducto,
+      DeleteServicio, 
       LoadServicios,
       servicio,
       servicios,
-      setServicio
+      setServicio,
+      UpdateServicio,
+      CreateServicio,
+      setIsModificar,
+      isModificar,
       
     }}>
       {children}
