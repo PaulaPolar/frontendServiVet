@@ -111,8 +111,9 @@ const Regist = () => {
                 ></input>
               </div>
               <div className="mt-7">
-                <button onClick={async () => {
+                <button onClick={async (e) => {
 
+                  e.preventDefault();
                   if (clave === confirmClave) {
                     const result = await registrarUsuario(nombre, correo, clave, apellidos, celular, direccion);
                     if (result == null) {
@@ -126,28 +127,28 @@ const Regist = () => {
                   }
 
 
-              }} className="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-                Registrar
-              </button>
-            </div>
-            <div className="flex mt-7 items-center text-center">
-              <hr className="border-gray-300 border-1 w-full rounded-md"></hr>
-              <label className="block font-medium text-sm text-gray-600 w-full">
-                Registrate con
-              </label>
-              <hr className="border-gray-300 border-1 w-full rounded-md"></hr>
-            </div>
-            <div className="flex mt-7 justify-center w-full">
-              <button className="mr-5 bg-blue-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-                Facebook
-              </button>
-              <button className="bg-red-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
-                Google
-              </button>
-            </div>
-            <div className="mt-7">
-              <div className="flex justify-center items-center">
-                <label className="mr-2">¿Ya tienes una cuenta?</label>
+                }} className="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                  Registrar
+                </button>
+              </div>
+              <div className="flex mt-7 items-center text-center">
+                <hr className="border-gray-300 border-1 w-full rounded-md"></hr>
+                <label className="block font-medium text-sm text-gray-600 w-full">
+                  Registrate con
+                </label>
+                <hr className="border-gray-300 border-1 w-full rounded-md"></hr>
+              </div>
+              <div className="flex mt-7 justify-center w-full">
+                <button className="mr-5 bg-blue-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                  Facebook
+                </button>
+                <button className="bg-red-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                  Google
+                </button>
+              </div>
+              <div className="mt-7">
+                <div className="flex justify-center items-center">
+                  <label className="mr-2">¿Ya tienes una cuenta?</label>
 
                   <Link
                     className=" text-blue-500 transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105"

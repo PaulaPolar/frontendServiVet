@@ -31,26 +31,14 @@ const UserProvider = ({ children }) => {
     console.log(celular);
     console.log(direccion);
 
-    if (nombre == "") {
+    const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-    } else if (correo.match(
-      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    )) {
 
-    } else if (clave == "") {
-
-    } else if (apellidos == "") {
-
-    } else if (celular == "") {
-
-    } else if (direccion == "") {
-
-    } else {
-      return await axios({
-        url: "http://localhost:9301/sesion",
-        method: 'post',
-        data: {
-          query: `
+    return await axios({
+      url: "http://localhost:9301/sesion",
+      method: 'post',
+      data: {
+        query: `
                   mutation {
                     register (
                         
@@ -64,15 +52,15 @@ const UserProvider = ({ children }) => {
                       )
                     }
                   `
-        }
-      }).then((result) => {
-        setToken(result.data.data.register);
-        localStorage.setItem('token', result.data.data.register);
-        console.log(result)
+      }
+    }).then((result) => {
+      setToken(result.data.data.register);
+      localStorage.setItem('token', result.data.data.register);
+      console.log(result)
 
-      }).catch(err => console.log(err));
+    }).catch(err => console.log(err));
 
-    }
+
 
 
   }
@@ -141,7 +129,7 @@ const UserProvider = ({ children }) => {
       },
     ]);
 
-    
+
     // await axios.get(`${API}/usuario/usuarios`)
     //     .then(response => setUsuarios(response.data))
     //     .catch(err => console.log(err));
@@ -169,104 +157,104 @@ const UserProvider = ({ children }) => {
   const LoadProductos = async () => {
     setProductos([
       {
-        id:1,
+        id: 1,
         nombre: "producto 1",
         precio: "precio 1",
         imagen: "ballena.jpg"
       },
       {
-        id:2,
+        id: 2,
         nombre: "producto 1",
         precio: "precio 1",
         imagen: "ballena.jpg"
       },
       {
-        id:3,
+        id: 3,
         nombre: "producto 1",
         precio: "precio 1",
         imagen: "ballena.jpg"
       },
       {
-        id:4,
+        id: 4,
         nombre: "producto 1",
         precio: "precio 1",
         imagen: "ballena.jpg"
       },
       {
-        id:5,
+        id: 5,
         nombre: "producto 1",
         precio: "precio 1",
         imagen: "ballena.jpg"
       },
       {
-        id:2,
+        id: 2,
         nombre: "producto 1",
         precio: "precio 1",
         imagen: "ballena.jpg"
       },
       {
-        id:2,
+        id: 2,
         nombre: "producto 1",
         precio: "precio 1",
         imagen: "ballena.jpg"
       },
       {
-        id:2,
+        id: 2,
         nombre: "producto 1",
         precio: "precio 1",
         imagen: "ballena.jpg"
       },
       {
-        id:2,
+        id: 2,
         nombre: "producto 1",
         precio: "precio 1",
         imagen: "ballena.jpg"
       },
       {
-        id:2,
+        id: 2,
         nombre: "producto 1",
         precio: "precio 1",
         imagen: "ballena.jpg"
       },
       {
-        id:2,
+        id: 2,
         nombre: "producto 1",
         precio: "precio 1",
         imagen: "ballena.jpg"
       },
       {
-        id:2,
+        id: 2,
         nombre: "producto 1",
         precio: "precio 1",
         imagen: "ballena.jpg"
       },
       {
-        id:2,
+        id: 2,
         nombre: "producto 1",
         precio: "precio 1",
         imagen: "ballena.jpg"
       },
       {
-        id:2,
+        id: 2,
         nombre: "producto 1",
         precio: "precio 1",
         imagen: "ballena.jpg"
       },
       {
-        id:2,
+        id: 2,
         nombre: "producto 1",
         precio: "precio 1",
         imagen: "ballena.jpg"
       },
       {
-        id:2,
+        id: 2,
         nombre: "producto 1",
         precio: "precio 1",
         imagen: "ballena.jpg"
       },
     ]);
 
-    
+
     // await axios.get(`${API}/usuario/usuarios`)
     //     .then(response => setUsuarios(response.data))
     //     .catch(err => console.log(err));
@@ -278,7 +266,7 @@ const UserProvider = ({ children }) => {
     //         .then(window.location.reload(true))
     //         .catch(err => console.log(err));
   }
-   // const UpdateProducto = async (idProducto, data) => {
+  // const UpdateProducto = async (idProducto, data) => {
   //     await axios.put(`${API}/usuario/update/${idUser}`, data)
   //         .then(LoadUsuarios())
   //         .catch(err => console.log(err));
@@ -293,56 +281,56 @@ const UserProvider = ({ children }) => {
   const LoadServicios = async () => {
     setServicios([
       {
-        id:1,
+        id: 1,
         nombre: "servicio 1",
         descripcion: "descripcion 1",
         imagen: 'cardiologia.jpg'
       },
       {
-        id:2,
+        id: 2,
         nombre: "servicio 1",
         descripcion: "descripcion 1",
         imagen: "cardiologia.jpg"
       },
       {
-        id:3,
+        id: 3,
         nombre: "servicio 1",
         descripcion: "descripcion 1",
         imagen: "cardiologia.jpg"
       },
       {
-        id:2,
+        id: 2,
         nombre: "servicio 1",
         descripcion: "precio 1",
         imagen: "cardiologia.jpg"
       },
       {
-        id:2,
+        id: 2,
         nombre: "servicio 1",
         descripcion: "descripcion 1",
         imagen: 'cardiologia.jpg'
       },
       {
-        id:2,
+        id: 2,
         nombre: "servicio 1",
         descripcion: "descripcion 1",
         imagen: "cardiologia.jpg"
       },
       {
-        id:2,
+        id: 2,
         nombre: "servicio 1",
         descripcion: "descripcion 1",
         imagen: "cardiologia.jpg"
       },
       {
-        id:2,
+        id: 2,
         nombre: "servicio 1",
         descripcion: "precio 1",
         imagen: "cardiologia.jpg"
       },
     ]);
 
-    
+
     // await axios.get(`${API}/usuario/usuarios`)
     //     .then(response => setUsuarios(response.data))
     //     .catch(err => console.log(err));
@@ -355,7 +343,7 @@ const UserProvider = ({ children }) => {
     //         .catch(err => console.log(err));
   }
 
-   // const UpdateServicio = async (idServicio, data) => {
+  // const UpdateServicio = async (idServicio, data) => {
   //     await axios.put(`${API}/usuario/update/${idUser}`, data)
   //         .then(LoadUsuarios())
   //         .catch(err => console.log(err));
@@ -387,7 +375,7 @@ const UserProvider = ({ children }) => {
       servicio,
       servicios,
       setServicio
-      
+
     }}>
       {children}
     </UserContext.Provider>
