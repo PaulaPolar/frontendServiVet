@@ -174,7 +174,13 @@ input.w-button {
     border-color: #eee;
 }
 
+#grid{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 .fila-1{
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: grid;
     justify-content: stretch;
     justify-items: start;

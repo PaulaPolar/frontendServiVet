@@ -4,6 +4,9 @@ import "../App.css";
 import "./Citas.css";
 import eliminar from "../img/delete.png";
 import edit from "../img/edit.png";
+import TablaAdmin from "./TablaAdmin";
+import TablaUserCitasDisponibles from "./TablaUserCitasDisponibles";
+import TablaUserMisCitas from "./TablaUserMisCitas";
 
 const Nosotros = () => {
   let [isOpen, setIsOpen] = useState(false);
@@ -242,12 +245,12 @@ const Nosotros = () => {
       </Transition>
 
 
-
+      
 
       <section className="general">
         <div className="contenedor-citas">
           <div className="arriba">
-            <nav className="text-block">mostrar</nav>
+            <nav className="text-block">Administrador</nav>
             <a href="#" className="button" onClick={openModal}>
               + Agregar
             </a>
@@ -258,14 +261,15 @@ const Nosotros = () => {
                 <span className="columnas">Fecha</span>
               </div>
               <div id="div-columnas" className="hora">
-                <span className="columnas">Hora</span>
+                <span className="columnas">Hora Inicial</span>
+              </div>
+              <div id="div-columnas" className="medico">
+                <span className="columnas">Hora Final</span>
               </div>
               <div id="div-columnas" className="medico">
                 <span className="columnas">Medico</span>
               </div>
-              <div id="div-columnas" className="estate">
-                <span className="columnas">Estado</span>
-              </div>
+
               <div id="div-columnas" className="hora">
                 <span className="columnas">Acciones</span>
               </div>
@@ -275,9 +279,8 @@ const Nosotros = () => {
               <span className="columnas">2020-10-07</span>
               <span className="columnas">9:00</span>
               <span className="columnas">Hernan Mendez</span>
-              <span className="estadoaceptado">Aceptado</span>
+              <span className="columnas">Hernan Mendez</span>
               <div className="icons">     
-                <img className="icon" src={edit} alt="" />
                 <button onClick={openModalEliminar}>
                 <img className="icon" src={eliminar} alt="" />
                 </button>
@@ -288,21 +291,22 @@ const Nosotros = () => {
               <span className="columnas">2020-10-07</span>
               <span className="columnas">9:00</span>
               <span className="columnas">Hernan Mendez</span>
-              <span className="pendiente">Pendientes</span>
+              <span className="columnas">Hernan Mendez</span>
               <div className="icons">
-                <img className="icon" src={edit} alt="" />
                 <button onClick={openModalEliminar}>
                 <img className="icon" src={eliminar} alt="" />
                 </button>
               </div>
             </div>
+
+        
+
             <div id="grid" className="fila-4">
               <span className="columnas">2020-10-07</span>
               <span className="columnas">9:00</span>
               <span className="columnas">Hernan Mendez</span>
-              <span className="estadoaceptado">Aceptado</span>
+              <span className="columnas">Hernan Mendez</span>
               <div className="icons">
-                <img className="icon" src={edit} alt="" />
                 <button onClick={openModalEliminar}>
                 <img className="icon" src={eliminar} alt="" />
                 </button>
@@ -312,7 +316,11 @@ const Nosotros = () => {
           </div>
         </div>
       </section>
+      <TablaUserMisCitas></TablaUserMisCitas>
+
     </Fragment>
+
+    
   );
 };
 
