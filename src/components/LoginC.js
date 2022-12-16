@@ -31,19 +31,6 @@ const LoginC = () => {
                 <div className="mt-7">
                   <input type="password" placeholder="Contraseña" onChange={(e) => { setClave(e.target.value); console.log("Clave: " + clave) }} className="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0" />
                 </div>
-                <div className="mt-7 flex">
-                  <label htmlFor="remember_me" className="inline-flex items-center w-full cursor-pointer">
-                    <input id="remember_me" type="checkbox" className="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember" />
-                    <span className="ml-2 text-sm text-gray-600">
-                      Recuerdame
-                    </span>
-                  </label>
-                  <div className="w-full text-right">
-                    <a className="underline text-sm text-gray-600 hover:text-gray-900" href="#">
-                      ¿Olvidó su contraseña?
-                    </a>
-                  </div>
-                </div>
                 <div className="mt-7">
                   <button onClick={async (e) => {
                     e.preventDefault();

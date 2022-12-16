@@ -4,13 +4,15 @@ import "../App.css";
 import { Link, useHistory } from "react-router-dom";
 import MostrarImg from '../components/MostrarImg';
 import UserContext from "../context/UserContext";
+import ModalServicio from './ModalServicio';
 
 
 const Servicio = ({ servicio }) => {
 
-    const { DeleteServicio, setServicio } = useContext(UserContext);
+    const { DeleteServicio, setServicio, setIsModificar } = useContext(UserContext);
     const history = useHistory();
     let [isOpen, setIsOpen] = useState(false);
+    let [isOpenModificar, setIsOpenModificar] = useState(false);
 
     function closeModal() {
         setIsOpen(false);
@@ -20,9 +22,18 @@ const Servicio = ({ servicio }) => {
         setIsOpen(true);
     }
 
-    function modificarP(servicio) {
+    function closeModalModificar() {
+        setIsOpenModificar(false);
+    }
+
+    function openModalModificar() {
+        setIsOpenModificar(true);
+    }
+
+    function modificarS(servicio, isModificar) {
+        setIsModificar(isModificar);
         setServicio(servicio);
-        history.push("/modificarUsuario");
+        openModalModificar();
     }
 
     return (
@@ -93,11 +104,35 @@ const Servicio = ({ servicio }) => {
                     </div>
                 </Dialog>
             </Transition>
+            <Transition appear show={isOpenModificar} as={Fragment}>
+                <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={closeModalModificar}>
+                    <div className="min-h-screen px-4 text-center">
+                        <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0" enterTo="opacity-100" leave="ease-in duration-200"
+                            leaveFrom="opacity-100" leaveTo="opacity-0">
+                            <Dialog.Overlay className="fixed inset-0" />
+                        </Transition.Child>
+                        <span className="" aria-hidden="true" >
+                            &#8203;
+                        </span>
+                        <Transition.Child
+                            as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="ease-in duration-200"
+                            leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">
+                            <div className=" text-center inline-block w-full max-w-2xl p-6 my-6 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                                <div class="bg-green-200 py-10 px-5  ">
+                                    <div class="bg-white p-10 md:w-3/4 mx-auto">
+                                        <ModalServicio closeModal={closeModalModificar} />
+                                    </div>
+                                </div>
+                            </div>
+                        </Transition.Child>
+                    </div>
+                </Dialog>
+            </Transition>
             <div class="bg-gray-500 group relative rounded-lg overflow-hidden shadow-lg">
                 <div class="relative w-full h-80 md:h-64 lg:h-44">
                     <MostrarImg className="img" item={servicio} />
                     <p class="absolute right-2 top-2  rounded-full p-2 cursor-pointer group ">
-                        <button
+                        <button onClick={() => { modificarS(servicio, true) }}
                             class="border rounded-full bg-green-100 border-primary py-2 px-4 text-primary inline-block rounded hover:bg-primary hover:text-blue-500"
                         >
                             <svg

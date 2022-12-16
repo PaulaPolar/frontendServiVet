@@ -34,7 +34,7 @@
 }
 
 .pop-up {
-    display: none;
+    display: flex;
     position: absolute;
     left: 0%;
     top: 0%;
@@ -174,7 +174,13 @@ input.w-button {
     border-color: #eee;
 }
 
+#grid{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 .fila-1{
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: grid;
     justify-content: stretch;
     justify-items: start;
@@ -257,7 +263,7 @@ input.w-button {
 }
 
 .pop-up2{
-    display: none;
+    display: flex;
     position: absolute;
     left: 0%;
     top: 0%;

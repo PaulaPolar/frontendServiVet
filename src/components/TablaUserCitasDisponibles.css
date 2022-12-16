@@ -1,0 +1,19 @@
+.reservar.fila2 {
+    display: block;
+}
+
+.reservar {
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+.w-button {
+    display: inline-block;
+    padding: 9px 15px;
+    background-color: #3898EC;
+    color: white;
+    border: 0;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 10px;
+}

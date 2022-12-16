@@ -12,9 +12,13 @@ const UserProvider = ({ children }) => {
   const [usuarios, setUsuarios] = useState([]);
   const [usuario, setUsuario] = useState([]);
   const [productos, setProductos] = useState([]);
+  const [isModificar, setIsModificar] = useState([]);
   const [producto, setProducto] = useState([]);
   const [servicios, setServicios] = useState([]);
   const [servicio, setServicio] = useState([]);
+  const [infoVeterinaria, setInfoVeterinaria] = useState([]);
+  const [personal, setPersonal] = useState([]);
+  const [infoPerfil, setInfoPerfil] = useState([]);
 
 
   const cerrarSesion = async () => {
@@ -130,6 +134,7 @@ const UserProvider = ({ children }) => {
     ]);
 
 
+
     // await axios.get(`${API}/usuario/usuarios`)
     //     .then(response => setUsuarios(response.data))
     //     .catch(err => console.log(err));
@@ -160,97 +165,161 @@ const UserProvider = ({ children }) => {
         id: 1,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca"
       },
       {
         id: 2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca"
       },
       {
         id: 3,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca"
       },
       {
         id: 4,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca"
       },
       {
         id: 5,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca"
       },
       {
         id: 2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca"
       },
       {
         id: 2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca"
       },
       {
         id: 2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca"
       },
       {
         id: 2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca"
       },
       {
         id: 2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca"
       },
       {
         id: 2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca"
       },
       {
         id: 2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca"
       },
       {
         id: 2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca"
       },
       {
         id: 2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca"
       },
       {
         id: 2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca"
       },
       {
         id: 2,
         nombre: "producto 1",
         precio: "precio 1",
-        imagen: "ballena.jpg"
+        imagen: "ballena.jpg",
+        descripcion: "producto.descripcion",
+        peso: "producto.peso",
+        edad: "producto.edad",
+        marca: "producto.marca"
       },
     ]);
 
@@ -272,11 +341,12 @@ const UserProvider = ({ children }) => {
   //         .catch(err => console.log(err));
   // }
 
-  // const CreateProducto = async (datos) => {
-  //     await axios.post(`${API}/usuario/crear`, datos)
-  //         .then(LoadUsuarios())
-  //         .catch(err => console.log("error al enviar datos" + err));
-  // }
+  const CreateProducto = async (datos) => {
+    alert("se crea el producto con - " + datos.nombre)
+    //     await axios.post(`${API}/usuario/crear`, datos)
+    //         .then(LoadUsuarios())
+    //         .catch(err => console.log("error al enviar datos" + err));
+  }
 
   const LoadServicios = async () => {
     setServicios([
@@ -349,11 +419,80 @@ const UserProvider = ({ children }) => {
   //         .catch(err => console.log(err));
   // }
 
-  // const CreateServicio = async (datos) => {
-  //     await axios.post(`${API}/usuario/crear`, datos)
-  //         .then(LoadUsuarios())
-  //         .catch(err => console.log("error al enviar datos" + err));
-  // }
+  const CreateServicio = async (datos) => {
+    alert("se crea el servicio con - " + datos.nombre)
+    //     await axios.post(`${API}/usuario/crear`, datos)
+    //         .then(LoadUsuarios())
+    //         .catch(err => console.log("error al enviar datos" + err));
+  }
+
+  const LoadInfoVeterinaria = async () => {
+    setInfoVeterinaria({
+      mision: "Ofrecer bienestar tanto animal, como a las familias de nuestros pacientes a través de la prestación de servicios médicos veterinarios y complementarios, entregando calidad y satisfacción, superando las expectativas de nuestros clientes, contribuyendo a la innovación y desarrollo profesional del sector Médico Veterinario de la Región.",
+      vision: "Buscar la excelencia en la prevención, detección y curación de enfermedades en animales de compañía, aumentando el nivel de seguridad sanitaria en quienes conviven con ellos y hacerlo de forma sostenible, rentable, profesional y ética; así como mejorar la relación afectiva entre las mascotas y sus propietarios, generando un mayor equilibrio sanitario y emocional en ambos.",
+      direccion: "calle 14 no 12",
+      numero: "3145869589",
+      correo: "serviVet@gmail.com",
+      usuarios: [
+        {
+          nombre: "Sandra Cleves",
+          cargo: "Veterinario General",
+          imagen: 'doctor1.jpg',
+          descripcion: "Realizar diagnósticos, tratamientos y prevención de las enfermedades que afectan a los animales domésticos, de experimentación, exóticos, silvestres y salvajes."
+        },
+        {
+          nombre: "Mario Cortez",
+          cargo: "Cirujano",
+          imagen: "doctor2.jpg",
+          descripcion: "Supervisar el buen uso de los fármacos veterinarios, así como la fiscalización del uso indiscriminado de los mismos por parte de personas, establecimientos, o entidades no idóneas para esta actividad, a la vez servir de asesores de éstas, en todo lo relacionado a los medicamentos de uso veterinario."
+        },
+        {
+          nombre: "Andres Quintero",
+          cargo: "Cirujano",
+          imagen: "Bromatología y microbiología.",
+          descripcion: "Supervisar el buen uso de los fármacos veterinarios, así como la fiscalización del uso indiscriminado de los mismos por parte de personas, establecimientos, o entidades no idóneas para esta actividad, a la vez servir de asesores de éstas, en todo lo relacionado a los medicamentos de uso veterinario."
+        },
+      ]
+    });
+
+  }
+  const LoadPersonal = async () => {
+    setPersonal([
+        {
+          nombre: "Sandra Cleves",
+          cargo: "Veterinario General",
+          imagen: 'doctor1.jpg',
+          descripcion: "Realizar diagnósticos, tratamientos y prevención de las enfermedades que afectan a los animales domésticos, de experimentación, exóticos, silvestres y salvajes."
+        },
+        {
+          nombre: "Mario Cortez",
+          cargo: "Cirujano",
+          imagen: "doctor2.jpg",
+          descripcion: "Supervisar el buen uso de los fármacos veterinarios, así como la fiscalización del uso indiscriminado de los mismos por parte de personas, establecimientos, o entidades no idóneas para esta actividad, a la vez servir de asesores de éstas, en todo lo relacionado a los medicamentos de uso veterinario."
+        },
+        {
+          nombre: "Andres Quintero",
+          cargo: "Bromatología y microbiología.",
+          imagen: "doctor3.jpg",
+          descripcion: "Supervisar el buen uso de los fármacos veterinarios, así como la fiscalización del uso indiscriminado de los mismos por parte de personas, establecimientos, o entidades no idóneas para esta actividad, a la vez servir de asesores de éstas, en todo lo relacionado a los medicamentos de uso veterinario."
+        },
+      ]
+    );
+
+  }
+
+  const LoadInfoUsuario = async () => {
+    setInfoPerfil({
+      nombre: "Tatiana Yiseth",
+      apellidos: "vehn lopez",
+      correo: "calle 14 no 12",
+      numero: 3145869589,
+      direccion: "Tati12t@gmail.com",
+      rol: "administrador",
+      pais: "Colombia"
+    });
+
+  }
 
   return (
     <UserContext.Provider value={{
@@ -370,6 +509,8 @@ const UserProvider = ({ children }) => {
       producto,
       productos,
       setProducto,
+      UpdateProducto,
+      CreateProducto,
       DeleteServicio,
       LoadServicios,
       servicio,
