@@ -35,26 +35,14 @@ const UserProvider = ({ children }) => {
     console.log(celular);
     console.log(direccion);
 
-    if (nombre == "") {
+    const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-    } else if (correo.match(
-      /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    )) {
 
-    } else if (clave == "") {
-
-    } else if (apellidos == "") {
-
-    } else if (celular == "") {
-
-    } else if (direccion == "") {
-
-    } else {
-      return await axios({
-        url: "http://localhost:9301/sesion",
-        method: 'post',
-        data: {
-          query: `
+    return await axios({
+      url: "http://localhost:9301/sesion",
+      method: 'post',
+      data: {
+        query: `
                   mutation {
                     register (
                         
@@ -68,15 +56,15 @@ const UserProvider = ({ children }) => {
                       )
                     }
                   `
-        }
-      }).then((result) => {
-        setToken(result.data.data.register);
-        localStorage.setItem('token', result.data.data.register);
-        console.log(result)
+      }
+    }).then((result) => {
+      setToken(result.data.data.register);
+      localStorage.setItem('token', result.data.data.register);
+      console.log(result)
 
-      }).catch(err => console.log(err));
+    }).catch(err => console.log(err));
 
-    }
+
 
 
   }
@@ -144,6 +132,7 @@ const UserProvider = ({ children }) => {
         id: 4,
       },
     ]);
+
 
 
     // await axios.get(`${API}/usuario/usuarios`)
@@ -346,12 +335,11 @@ const UserProvider = ({ children }) => {
     //         .then(window.location.reload(true))
     //         .catch(err => console.log(err));
   }
-  const UpdateProducto = async (idProducto, data, imagenEditada) => {
-    alert("se actualiza el producto - " + idProducto + "con los datos de - " + data.nombre + " con la imagen editada " + imagenEditada)
-    //     await axios.put(`${API}/usuario/update/${idUser}`, data)
-    //         .then(LoadUsuarios())
-    //         .catch(err => console.log(err));
-  }
+  // const UpdateProducto = async (idProducto, data) => {
+  //     await axios.put(`${API}/usuario/update/${idUser}`, data)
+  //         .then(LoadUsuarios())
+  //         .catch(err => console.log(err));
+  // }
 
   const CreateProducto = async (datos) => {
     alert("se crea el producto con - " + datos.nombre)
@@ -425,12 +413,11 @@ const UserProvider = ({ children }) => {
     //         .catch(err => console.log(err));
   }
 
-  const UpdateServicio = async (idServicio, data, imagenEditada) => {
-    alert("se actualiza el servicio - " + idServicio + "con los datos de - " + data.nombre + " imagen --> " + imagenEditada)
-    //     await axios.put(`${API}/usuario/update/${idUser}`, data)
-    //         .then(LoadUsuarios())
-    //         .catch(err => console.log(err));
-  }
+  // const UpdateServicio = async (idServicio, data) => {
+  //     await axios.put(`${API}/usuario/update/${idUser}`, data)
+  //         .then(LoadUsuarios())
+  //         .catch(err => console.log(err));
+  // }
 
   const CreateServicio = async (datos) => {
     alert("se crea el servicio con - " + datos.nombre)
@@ -528,20 +515,7 @@ const UserProvider = ({ children }) => {
       LoadServicios,
       servicio,
       servicios,
-      setServicio,
-      UpdateServicio,
-      CreateServicio,
-      setIsModificar,
-      isModificar,
-      LoadInfoVeterinaria,
-      infoVeterinaria,
-      setInfoVeterinaria,
-      LoadInfoUsuario,
-      infoPerfil,
-      setInfoPerfil,
-      LoadPersonal,
-      setPersonal,
-      personal
+      setServicio
 
     }}>
       {children}
