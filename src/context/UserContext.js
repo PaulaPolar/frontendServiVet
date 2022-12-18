@@ -542,7 +542,6 @@ const UserProvider = ({ children }) => {
       LoadPersonal,
       setPersonal,
       personal
-
     }}>
       {children}
     </UserContext.Provider>
