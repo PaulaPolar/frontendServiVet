@@ -335,11 +335,12 @@ const UserProvider = ({ children }) => {
     //         .then(window.location.reload(true))
     //         .catch(err => console.log(err));
   }
-  // const UpdateProducto = async (idProducto, data) => {
-  //     await axios.put(`${API}/usuario/update/${idUser}`, data)
-  //         .then(LoadUsuarios())
-  //         .catch(err => console.log(err));
-  // }
+  const UpdateProducto = async (idProducto, data, imagenEditada) => {
+    alert("se actualiza el producto - " + idProducto + "con los datos de - " + data.nombre + " con la imagen editada " + imagenEditada)
+    //     await axios.put(`${API}/usuario/update/${idUser}`, data)
+    //         .then(LoadUsuarios())
+    //         .catch(err => console.log(err));
+  }
 
   const CreateProducto = async (datos) => {
     alert("se crea el producto con - " + datos.nombre)
@@ -413,11 +414,12 @@ const UserProvider = ({ children }) => {
     //         .catch(err => console.log(err));
   }
 
-  // const UpdateServicio = async (idServicio, data) => {
-  //     await axios.put(`${API}/usuario/update/${idUser}`, data)
-  //         .then(LoadUsuarios())
-  //         .catch(err => console.log(err));
-  // }
+  const UpdateServicio = async (idServicio, data, imagenEditada) => {
+    alert("se actualiza el servicio - " + idServicio + "con los datos de - " + data.nombre + " imagen --> " + imagenEditada)
+    //     await axios.put(`${API}/usuario/update/${idUser}`, data)
+    //         .then(LoadUsuarios())
+    //         .catch(err => console.log(err));
+  }
 
   const CreateServicio = async (datos) => {
     alert("se crea el servicio con - " + datos.nombre)
@@ -515,8 +517,20 @@ const UserProvider = ({ children }) => {
       LoadServicios,
       servicio,
       servicios,
-      setServicio
-
+      setServicio,
+      UpdateServicio,
+      CreateServicio,
+      setIsModificar,
+      isModificar,
+      LoadInfoVeterinaria,
+      infoVeterinaria,
+      setInfoVeterinaria,
+      LoadInfoUsuario,
+      infoPerfil,
+      setInfoPerfil,
+      LoadPersonal,
+      setPersonal,
+      personal
     }}>
       {children}
     </UserContext.Provider>
