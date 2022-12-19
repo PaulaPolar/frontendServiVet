@@ -1,4 +1,5 @@
 import React, { useState, createContext } from 'react';
+import { useHistory } from "react-router-dom";
 import { API } from '../config';
 
 import axios from 'axios';
@@ -6,8 +7,10 @@ import axios from 'axios';
 const UserContext = createContext();
 
 
+
 const UserProvider = ({ children }) => {
 
+ 
   const [token, setToken] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
   const [usuario, setUsuario] = useState([]);
@@ -24,6 +27,9 @@ const UserProvider = ({ children }) => {
   const cerrarSesion = async () => {
     setToken("");
     localStorage.setItem('token', "");
+    console.log(localStorage.getItem('token'));
+    
+
   }
 
   const registrarUsuario = async (nombre, correo, clave, apellidos, celular, direccion) => {

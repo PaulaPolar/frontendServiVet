@@ -1,8 +1,9 @@
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useState, useContext} from "react";
 import Logo from "../img/iconmonstr-cat-5-240.png";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styled from "@emotion/styled";
 import "../App.css";
+import UserContext from "../context/UserContext";
 
 const Titulo = styled.h5`
   font-size: 6vw;
@@ -10,8 +11,75 @@ const Titulo = styled.h5`
   margin: 0vw 0vw 0vw 2vw;
 `;
 
+
+
 const Nav = () => {
+
+  const { cerrarSesion } = useContext(UserContext);
+  const history = useHistory();
+  function cerrar(){
+    let path = `/home`;
+    cerrarSesion();
+    history.push(path);
+  }
+
+  function cambiarPagina(){
+    let token = localStorage.getItem('token');
+    if(token.length<=0){
+        let path = `/home`;
+        history.push(path);
+        alert("No ha iniciado sesion")
+    }else{
+      let path = `/productos`;
+        history.push(path);
+    }
+}
+  //const [opcion, setOpcion] = useState(2);
+ 
+  const [cuerpo, setCuerpo] = useState();
+
+  function cambiarOpcion() {
+    let opcion = localStorage.getItem('token');
+    console.log("opcionnnnn "+opcion.length)
+    if (opcion.length<=0) {
+        setCuerpo(
+        <div className="mt-6 mb-4 ">
+        <Link
+          className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-pink-400 hover:bg-pink-900 text-xl text-gray-900 font-bold  rounded-xl transition duration-200"
+          href="/#"
+          to="/login"
+        >
+          Iniciar sesion
+        </Link>
+
+        <Link
+          className="hidden lg:inline-block py-2 px-6 bg-green-400 hover:bg-green-900 text-xl text-white font-bold rounded-xl transition duration-200"
+          href="/#"
+          to="/registro"
+        >
+          Registrarse
+        </Link>
+      </div>
+            
+        );
+    } else {
+        setCuerpo(
+        <div className="mt-6 mb-4 ">
+         <button onClick={() => { cerrar() }} class="flex  font-medium text-gray-100 hover:text-green-400 p-2 rounded-lg hover:bg-green-100">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}" stroke="currentColor" class="mr-3 h-6 w-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+          </svg>
+
+          Cerrar sesion
+        </button> 
+      </div>
+            
+        );
+    }
+  }
+
   useEffect(() => {
+    cambiarOpcion();
     const burger = document.querySelectorAll(".navbar-burger");
     const menu = document.querySelectorAll(".navbar-menu");
 
@@ -79,30 +147,7 @@ const Nav = () => {
 
         <div className="flex flex-col items-end px-4">
           {/* padre del inicio de seccion y los link de los otros productos */}
-          <div className="mt-6 mb-4 ">
-            <Link
-              className="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-pink-400 hover:bg-pink-900 text-xl text-gray-900 font-bold  rounded-xl transition duration-200"
-              href="/#"
-              to="/login"
-            >
-              Iniciar sesion
-            </Link>
-
-            <Link
-              className="hidden lg:inline-block py-2 px-6 bg-green-400 hover:bg-green-900 text-xl text-white font-bold rounded-xl transition duration-200"
-              href="/#"
-              to="/registro"
-            >
-              Registrarse
-            </Link>
-            {/* <a href="#" class="flex  font-medium text-gray-100 hover:text-green-400 p-2 rounded-lg hover:bg-green-100">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="{1.5}" stroke="currentColor" class="mr-3 h-6 w-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
-              </svg>
-
-              Cerrar sesion
-            </a> */}
-          </div>
+          {cuerpo}
           <div className="">
             <ul className="hidden transform translate-y-2  lg:content-end lg:flex lg:items-center lg:w-auto px-4">
               <li>
@@ -131,13 +176,13 @@ const Nav = () => {
                 </svg>
               </li>
               <li>
-                <Link
-                  to="/productos"
+                <button
+                 onClick={() => { cambiarPagina() }}
                   className="font-bold text-3xl text-white focus:text-green-400 hover:text-green-400 "
-                  href="/#"
+              
                 >
                   Productos
-                </Link>
+                </button>
               </li>
               <li className="text-gray-300">
                 <svg
