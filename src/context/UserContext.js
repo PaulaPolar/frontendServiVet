@@ -10,7 +10,7 @@ const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
 
- 
+
   const [token, setToken] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
   const [usuario, setUsuario] = useState([]);
@@ -28,9 +28,26 @@ const UserProvider = ({ children }) => {
     setToken("");
     localStorage.setItem('token', "");
     console.log(localStorage.getItem('token'));
-    
+
 
   }
+
+  const comprobarToken = async () => {
+    return await axios({
+      url: "http://localhost:9301/graphql",
+      method: 'post',
+      data: {
+        query: `
+        mutation {
+          comprobateToken(token: ${localStorage.getItem('token')} )
+          }
+                  `
+      }
+    }).then((result) => {
+      return result
+    }).catch(err => console.log(err));
+  }
+
 
   const registrarUsuario = async (nombre, correo, clave, apellidos, celular, direccion) => {
 
@@ -43,12 +60,22 @@ const UserProvider = ({ children }) => {
 
     const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
+    if (correo.match(regex)) {
 
-    return await axios({
-      url: "http://localhost:9301/sesion",
-      method: 'post',
-      data: {
-        query: `
+      if (nombre != "") {
+
+        if (apellidos != "") {
+
+          if (celular != "") {
+
+            if (direccion != "") {
+
+
+              return await axios({
+                url: "http://localhost:9301/sesion",
+                method: 'post',
+                data: {
+                  query: `
                   mutation {
                     register (
                         
@@ -62,14 +89,22 @@ const UserProvider = ({ children }) => {
                       )
                     }
                   `
+                }
+              }).then((result) => {
+                setToken(result.data.data.register);
+                localStorage.setItem('token', result.data.data.register);
+                console.log(result)
+                return true
+
+              }).catch(err => {
+                console.log(err)
+                return false
+              });
+            }
+          }
+        }
       }
-    }).then((result) => {
-      setToken(result.data.data.register);
-      localStorage.setItem('token', result.data.data.register);
-      console.log(result)
-
-    }).catch(err => console.log(err));
-
+    }
 
 
 
@@ -466,25 +501,25 @@ const UserProvider = ({ children }) => {
   }
   const LoadPersonal = async () => {
     setPersonal([
-        {
-          nombre: "Sandra Cleves",
-          cargo: "Veterinario General",
-          imagen: 'doctor1.jpg',
-          descripcion: "Realizar diagnósticos, tratamientos y prevención de las enfermedades que afectan a los animales domésticos, de experimentación, exóticos, silvestres y salvajes."
-        },
-        {
-          nombre: "Mario Cortez",
-          cargo: "Cirujano",
-          imagen: "doctor2.jpg",
-          descripcion: "Supervisar el buen uso de los fármacos veterinarios, así como la fiscalización del uso indiscriminado de los mismos por parte de personas, establecimientos, o entidades no idóneas para esta actividad, a la vez servir de asesores de éstas, en todo lo relacionado a los medicamentos de uso veterinario."
-        },
-        {
-          nombre: "Andres Quintero",
-          cargo: "Bromatología y microbiología.",
-          imagen: "doctor3.jpg",
-          descripcion: "Supervisar el buen uso de los fármacos veterinarios, así como la fiscalización del uso indiscriminado de los mismos por parte de personas, establecimientos, o entidades no idóneas para esta actividad, a la vez servir de asesores de éstas, en todo lo relacionado a los medicamentos de uso veterinario."
-        },
-      ]
+      {
+        nombre: "Sandra Cleves",
+        cargo: "Veterinario General",
+        imagen: 'doctor1.jpg',
+        descripcion: "Realizar diagnósticos, tratamientos y prevención de las enfermedades que afectan a los animales domésticos, de experimentación, exóticos, silvestres y salvajes."
+      },
+      {
+        nombre: "Mario Cortez",
+        cargo: "Cirujano",
+        imagen: "doctor2.jpg",
+        descripcion: "Supervisar el buen uso de los fármacos veterinarios, así como la fiscalización del uso indiscriminado de los mismos por parte de personas, establecimientos, o entidades no idóneas para esta actividad, a la vez servir de asesores de éstas, en todo lo relacionado a los medicamentos de uso veterinario."
+      },
+      {
+        nombre: "Andres Quintero",
+        cargo: "Bromatología y microbiología.",
+        imagen: "doctor3.jpg",
+        descripcion: "Supervisar el buen uso de los fármacos veterinarios, así como la fiscalización del uso indiscriminado de los mismos por parte de personas, establecimientos, o entidades no idóneas para esta actividad, a la vez servir de asesores de éstas, en todo lo relacionado a los medicamentos de uso veterinario."
+      },
+    ]
     );
 
   }
@@ -536,7 +571,8 @@ const UserProvider = ({ children }) => {
       setInfoPerfil,
       LoadPersonal,
       setPersonal,
-      personal
+      personal,
+      comprobarToken
     }}>
       {children}
     </UserContext.Provider>

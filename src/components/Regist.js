@@ -112,11 +112,11 @@ const Regist = () => {
                   e.preventDefault();
                   if (clave === confirmClave) {
                     const result = await registrarUsuario(nombre, correo, clave, apellidos, celular, direccion);
-                    if (result == null) {
-                      alert("Hubo un problema en el registro!")
-                    } else {
+                    if (result) {
                       alert("Se ha creado el usuario exitosamente!")
                       routeChange();
+                    } else {
+                      alert("Hubo un problema en el registro!")
                     }
                   } else {
                     alert("Las claves no coinciden")
